@@ -1,0 +1,39 @@
+﻿@model LMS_Lexicon.Core.Models.Author
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<br/>
+<h4>Är du säker på att du vill ta bort den här författaren?</h4>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @*@Html.DisplayNameFor(model => model.FirstName)*@
+            Namn
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt class = "col-sm-2">
+            @*@Html.DisplayNameFor(model => model.LastName)*@
+            Efternamn
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt class="col-sm-2">
+            @*@Html.DisplayNameFor(model => model.BirthDate)*@
+            Födelsedatum
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BirthDate)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="AuthorId" />
+        <input type="submit" value="Ta bort" class="btn btn-danger" /> |
+        <a asp-action="Index">&nbsp;<i class="fas fa-list-alt fa-lg"></i></a>
+    </form>
+</div>
